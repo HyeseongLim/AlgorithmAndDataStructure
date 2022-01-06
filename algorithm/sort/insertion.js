@@ -1,14 +1,11 @@
-let arr = []
+import { getRand } from "../../app.js";
 
-for(let i = 0; i < 10; i++) {
-    arr.push(Math.round(Math.random() * 100) + 1)
-}
+let arr = getRand();
 
 for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i + 1; j > 0; j--) {
-        if (arr[j] < arr[j - 1])
-            [arr[j - 1], arr[j]] = [arr[j], arr[j - 1]]
-    }
+  for (let j = i + 1; j > 0; j--) {
+    if (arr[j] < arr[j - 1]) [arr[j - 1], arr[j]] = [arr[j], arr[j - 1]];
+  }
 }
 
-console.log(arr)
+console.log(arr);

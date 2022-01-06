@@ -1,12 +1,10 @@
-let arr = []
+import { getRand } from "../../app.js";
 
-for (let i = 0; i < 10; i++) {
-    arr.push(Math.round(Math.random() * 100) + 1)
-}
+let arr = getRand();
 
 for (let i = 0; i < arr.length; i++) {
-    const index = arr.indexOf(Math.min(...arr.slice(i)));
-    [arr[i], arr[index]] = [arr[index], arr[i]]
+  const index = arr.indexOf(Math.min(...arr.slice(i)));
+  [arr[i], arr[index]] = [arr[index], arr[i]];
 }
 
-console.log(arr)
+console.log(arr);
